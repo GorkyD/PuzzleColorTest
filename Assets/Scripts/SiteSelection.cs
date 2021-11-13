@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SiteSelection : MonoBehaviour
@@ -10,24 +7,23 @@ public class SiteSelection : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ScreenMouseRay();
+            Painted();
         }
     }
 
-    private void ScreenMouseRay()
+    private void Painted()
     {
         Vector2 ray = Input.mousePosition;
         RaycastHit2D hit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(ray));
-        
         if (hit.collider != null)
         {
-            if (SelectedMaterial.selectedMaterial == null)
+            if (SelectedMaterial.SelectedColor == Color.white)
             {
                 Debug.Log("Выберите цвет");
             }
             else
             {
-                hit.collider.gameObject.GetComponent<SpriteRenderer>().material = SelectedMaterial.selectedMaterial;
+                hit.collider.gameObject.GetComponent<SpriteRenderer>().material.color = SelectedMaterial.SelectedColor;
             }
             
         }

@@ -1,26 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class SelectedMaterial : MonoBehaviour
 {
-    [SerializeField] private Material _red;
-    [SerializeField] private Material _blue;
-    [SerializeField] private Material _yellow;
+    [SerializeField] private Color _red;
+    [SerializeField] private Color _blue;
+    [SerializeField] private Color _yellow;
 
-    public static Material selectedMaterial = null;
+    public static Color SelectedColor = Color.white;
 
     public void SelectRed()
     {
-        selectedMaterial = _red;
+        SelectedColor = _red;
     }
     public void SelectBlue()
     {
-        selectedMaterial = _blue;
+        SelectedColor = _blue;
     }
     public void SelectPurple()
     {
-        selectedMaterial = _yellow;
+        SelectedColor = _yellow;
     }
 }
