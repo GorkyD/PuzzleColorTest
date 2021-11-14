@@ -23,6 +23,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Victory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Validation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20pbCBGHVnk3JyOlYyx6XwCHxFj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -48,7 +49,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636744374584</updated>
-      <workItem from="1636744634145" duration="29755000" />
+      <workItem from="1636744634145" duration="33778000" />
+      <workItem from="1636903245715" duration="21863000" />
     </task>
     <servers />
   </component>
