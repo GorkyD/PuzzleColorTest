@@ -15,6 +15,7 @@ public class SiteSelection : MonoBehaviour
     {
         Vector2 ray = Input.mousePosition;
         RaycastHit2D hit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(ray));
+        
         if (hit.collider != null)
         {
             if (SelectedMaterial.SelectedColor == Color.white)
@@ -25,7 +26,6 @@ public class SiteSelection : MonoBehaviour
             {
                 hit.collider.gameObject.GetComponent<SpriteRenderer>().material.color = SelectedMaterial.SelectedColor;
             }
-            
         }
         else
         {

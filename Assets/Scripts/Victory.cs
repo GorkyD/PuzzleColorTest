@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,28 +7,29 @@ public class Victory : MonoBehaviour
 {
     [SerializeField] private GameObject _playMenuUi;
     [SerializeField] private GameObject _levelCompleteMenuUi;
-    public List<GameObject> boxes;
     private bool victory;
 
     void Update()
     {
-        foreach (var box in boxes)
+        foreach (var box in CheckColider.boxes)
         {
-            Debug.Log(box.name + box.GetComponent<Validation>().validation);
+           Debug.Log(box.name + box.GetComponent<Validation>().validation);
         }
-
-        if (CheckColider.boxes.Any(box => box.GetComponent<Validation>().validation == false) || !CheckColider.boxes.Any())
+        
+        if (CheckColider.boxes.All(box => box.GetComponent<Validation>().validation == false) || !CheckColider.boxes.Any())
         {
             victory = false;
         }
-        else if (CheckColider.boxes.All(box => box.GetComponent<Validation>().validation == true))
+        else if (CheckColider.boxes.All(box => box.GetComponent<Validation>().validation))
         {
             victory = true;
         }
-
+        
         if (victory)
         {
             Debug.Log("Победа");
+            //_playMenuUi.SetActive(false);
+            //_levelCompleteMenuUi.SetActive(true);
         }
     }
 

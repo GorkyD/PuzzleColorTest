@@ -21,7 +21,7 @@ public class CheckColider : MonoBehaviour
         foreach (var box in boxes)
         {
             _collisionColor = box.GetComponent<SpriteRenderer>().material.color;
-            if (_collisionColor == _boxMaterial || _boxMaterial == Color.white || _collisionColor == Color.white)
+            if ((_boxMaterial == _collisionColor) || (_collisionColor == Color.white) || (_boxMaterial == Color.white))
             { 
                 box.GetComponent<Validation>().validation = false;
             }
@@ -32,14 +32,16 @@ public class CheckColider : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    private  void OnCollisionStay2D(Collision2D collision)
     {
         int count = collision.contactCount;
         for (int i = 0; i < count; i++)
         {
-            boxes.Add(collision.contacts[i].otherCollider.gameObject);
+            if (!boxes.Contains(collision.contacts[i].collider.gameObject))
+            {
+                boxes.Add(collision.contacts[i].collider.gameObject);
+            }
         }
     }
-
 }
 
