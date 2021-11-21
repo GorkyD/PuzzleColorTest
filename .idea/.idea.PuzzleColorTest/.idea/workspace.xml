@@ -21,10 +21,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Victory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Validation.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="20pbCBGHVnk3JyOlYyx6XwCHxFj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,6 +47,7 @@
       <updated>1636744374584</updated>
       <workItem from="1636744634145" duration="33778000" />
       <workItem from="1636903245715" duration="28128000" />
+      <workItem from="1637527455184" duration="2222000" />
     </task>
     <servers />
   </component>

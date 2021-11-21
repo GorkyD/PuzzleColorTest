@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SiteSelection : MonoBehaviour
 {
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -10,6 +9,7 @@ public class SiteSelection : MonoBehaviour
             Painted();
         }
     }
+
 
     private void Painted()
     {
@@ -24,15 +24,17 @@ public class SiteSelection : MonoBehaviour
             }
             else
             {
-                hit.collider.gameObject.GetComponent<SpriteRenderer>().material.color = SelectedMaterial.SelectedColor;
+                CheckColider collider = hit.collider.gameObject.GetComponent<CheckColider>();
+
+                if (collider != null)
+                {
+                    collider.TrySetColor(SelectedMaterial.SelectedColor);
+                }
             }
         }
         else
         {
             Debug.Log("Выберите квадрат");
         }
-        
     }
-
-
 }

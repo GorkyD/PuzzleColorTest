@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class Undo : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _recordingGameObjects;
-    [SerializeField] private Material defaultMaterial;
+    [SerializeField] private GameController _gameController;
 
     public void UndoButton()
     {
-        foreach (var gameObject in _recordingGameObjects)
-        {
-            gameObject.GetComponent<SpriteRenderer>().material = defaultMaterial;
-        }
-        
+        _gameController.Undo();
     }
+
+
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (_gameController == null)
+            _gameController = FindObjectOfType<GameController>();
+    }
+#endif
 }
