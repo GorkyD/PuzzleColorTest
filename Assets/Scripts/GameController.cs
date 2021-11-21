@@ -73,6 +73,9 @@ public class GameController : MonoBehaviour
 
     private void Box_OnStateChanged(BoxState state)
     {
-        
+        if (IsVictory())
+        {
+            Debug.Log("Победа");
+        }
     }
 }
